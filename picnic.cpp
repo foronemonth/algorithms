@@ -23,7 +23,7 @@ void init_var()
 int counting_pairings(bool taken[])
 {
     int friend1 = -1;
-    for(int i = 0; i<student_number; i++)
+    for(int i = 0; i < student_number; i++)
     {
         if(taken[i] == false)
         {
@@ -32,19 +32,18 @@ int counting_pairings(bool taken[])
         }
     }
     if(friend1 == -1)
-        return 0;
+        return (result + 1);
     
-    for(int j = 0; j<student_number; j++)
+    for(int j = 0; j < student_number; j++)
     {
         if(pairings_map[friend1][j] == true && taken[j] == false)
         {
             taken[friend1] = true;
             taken[j] = true;
-            result = result + 1;
             
-            counting_pairings(taken);
+            result = counting_pairings(taken);
+            
             taken[friend1] = false;
-            
             taken[j] = false;
         }
     }
