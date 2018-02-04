@@ -30,7 +30,6 @@ bool is_possible_to_search(int y, int x, int y1, int x1, int y2, int x2)
         if(board[y][x] == '.' && board[y1][x1] == '.' && board[y2][x2] == '.')
             ret = true;
     }
-    
     return ret;
 }
 
@@ -100,5 +99,6 @@ int main()
             printf("0\n");
         
     }
+
     return 0;
 }
